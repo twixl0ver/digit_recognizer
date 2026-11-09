@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.cache/
+.ipynb_checkpoints/
+.env
+*.joblib
+/artifacts/
+/data/raw/*
+!/data/raw/.gitkeep
+/train.csv
+/test.csv
+/sample_submission.csv
+/*.zip

@@ -1,0 +1,35 @@
+{
+  "data_sha256": "b35cc952c291f03d995f48721373e69454f689e299d724bd9a5927bdabddfeed",
+  "config": {
+    "experiment": {
+      "seed": 42,
+      "validation_fraction": 0.2
+    },
+    "model": {
+      "C": 1.0,
+      "max_iter": 1000,
+      "tol": 0.0001,
+      "solver": "lbfgs"
+    },
+    "runtime": {
+      "threads": 4
+    },
+    "paths": {
+      "train_csv": "data/raw/train.csv",
+      "artifact": "artifacts/baseline.joblib",
+      "reports": "reports"
+    }
+  },
+  "split_method": "Stratified train_test_split",
+  "train_rows": 33600,
+  "validation_rows": 8400,
+  "duplicate_rows_beyond_first": 0,
+  "groups_with_conflicting_labels": 0,
+  "overlapping_image_groups": 0,
+  "trained_at_utc": "2026-11-09T19:49:55.586399+00:00",
+  "training_seconds": 4.707436582975788,
+  "iterations": [
+    231
+  ],
+  "converged": true
+}
