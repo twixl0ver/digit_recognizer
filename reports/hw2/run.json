@@ -1,0 +1,76 @@
+{
+  "config": {
+    "training": {
+      "hidden_units": 128,
+      "epochs": 20,
+      "batch_size": 256,
+      "learning_rate": 0.001,
+      "alpha": 0.0001,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "threads": 4,
+      "max_shift": 2,
+      "validation_shift_seed": 2026
+    },
+    "paths": {
+      "train_csv": "data/raw/train.csv",
+      "split_csv": "reports/split.csv",
+      "baseline_run": "reports/run.json",
+      "baseline_predictions": "reports/validation_predictions.csv",
+      "reports": "reports/hw2",
+      "artifacts": "artifacts/hw2"
+    },
+    "experiments": [
+      {
+        "name": "mlp_relu",
+        "activation": "relu",
+        "augmentation": false,
+        "hypothesis": "Нелинейное представление пикселей улучшит качество относительно логрега."
+      },
+      {
+        "name": "mlp_relu_shift",
+        "activation": "relu",
+        "augmentation": true,
+        "hypothesis": "Сдвиги на обучении повысят устойчивость к положению цифры."
+      },
+      {
+        "name": "mlp_linear_shift",
+        "activation": "identity",
+        "augmentation": true,
+        "hypothesis": "Отключение ReLU уменьшит качество при той же архитектуре и аугментации."
+      },
+      {
+        "name": "mlp_linear",
+        "activation": "identity",
+        "augmentation": false,
+        "hypothesis": "Линейная версия без сдвигов покажет взаимодействие нелинейности и аугментации."
+      }
+    ]
+  },
+  "data_sha256": "b35cc952c291f03d995f48721373e69454f689e299d724bd9a5927bdabddfeed",
+  "split_sha256": "9b5fa4306a4495e3da500c5cf3a1e40e72e789418560377e35a45e0ce5ed084c",
+  "train_rows": 33600,
+  "validation_rows": 8400,
+  "baseline_metrics": {
+    "accuracy": 0.9133333333333333,
+    "macro_f1": 0.9121390412928904,
+    "shifted_accuracy": 0.643095238095238,
+    "shifted_macro_f1": 0.644204214030404
+  },
+  "best_experiment": "mlp_relu_shift",
+  "selection_metric": "mean original validation accuracy at final epoch",
+  "model_seeds": [
+    42,
+    43,
+    44
+  ],
+  "split_seed": 42,
+  "optimizer_steps_per_mlp": 2640,
+  "training_examples_per_mlp": 672000,
+  "validation_shift_seed": 2026,
+  "representative_seed": 42,
+  "completed_at_utc": "2026-11-22T18:11:33.413418+00:00"
+}

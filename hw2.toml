@@ -1,0 +1,42 @@
+[training]
+hidden_units = 128
+epochs = 20
+batch_size = 256
+learning_rate = 0.001
+alpha = 0.0001
+seeds = [42, 43, 44]
+threads = 4
+max_shift = 2
+validation_shift_seed = 2026
+
+[paths]
+train_csv = "data/raw/train.csv"
+split_csv = "reports/split.csv"
+baseline_run = "reports/run.json"
+baseline_predictions = "reports/validation_predictions.csv"
+reports = "reports/hw2"
+artifacts = "artifacts/hw2"
+
+[[experiments]]
+name = "mlp_relu"
+activation = "relu"
+augmentation = false
+hypothesis = "Нелинейное представление пикселей улучшит качество относительно логрега."
+
+[[experiments]]
+name = "mlp_relu_shift"
+activation = "relu"
+augmentation = true
+hypothesis = "Сдвиги на обучении повысят устойчивость к положению цифры."
+
+[[experiments]]
+name = "mlp_linear_shift"
+activation = "identity"
+augmentation = true
+hypothesis = "Отключение ReLU уменьшит качество при той же архитектуре и аугментации."
+
+[[experiments]]
+name = "mlp_linear"
+activation = "identity"
+augmentation = false
+hypothesis = "Линейная версия без сдвигов покажет взаимодействие нелинейности и аугментации."
